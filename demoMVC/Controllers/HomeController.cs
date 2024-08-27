@@ -13,11 +13,17 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Demo()
     {
-        return View();
+        return View(); 
     }
-
+    [HttpPost]
+     public IActionResult Demo(string hovaten, string diachi)
+    {
+        string strResult = "Hello" + hovaten + "-" + diachi;
+        ViewBag.thongBao  = strResult;
+        return View();
+    } 
     public IActionResult Privacy()
     {
         return View();
