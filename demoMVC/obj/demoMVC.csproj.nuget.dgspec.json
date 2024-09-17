@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PTPMQL\\demoMVC\\demoMVC.csproj": {}
+    "d:\\PTPMQL\\demoMVC\\demoMVC.csproj": {}
   },
   "projects": {
-    "D:\\PTPMQL\\demoMVC\\demoMVC.csproj": {
+    "d:\\PTPMQL\\demoMVC\\demoMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PTPMQL\\demoMVC\\demoMVC.csproj",
+        "projectUniqueName": "d:\\PTPMQL\\demoMVC\\demoMVC.csproj",
         "projectName": "demoMVC",
-        "projectPath": "D:\\PTPMQL\\demoMVC\\demoMVC.csproj",
+        "projectPath": "d:\\PTPMQL\\demoMVC\\demoMVC.csproj",
         "packagesPath": "C:\\Users\\adm\\.nuget\\packages\\",
-        "outputPath": "D:\\PTPMQL\\demoMVC\\obj\\",
+        "outputPath": "d:\\PTPMQL\\demoMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\adm\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -49,11 +49,17 @@
               "target": "Package",
               "version": "[8.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore.SQLite": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
             },
