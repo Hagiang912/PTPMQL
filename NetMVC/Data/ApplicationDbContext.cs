@@ -16,6 +16,8 @@ namespace NetMVC.Data
 
         public DbSet<NetMVC.Models.Entity.Student> Student { get; set; } = default!;
         public DbSet<NetMVC.Models.Entity.Person> Person { get; set; } = default!;
+        public DbSet<NetMVC.Models.Entity.Employee> Employee { get; set; } = default!;
+
        
     }
 }

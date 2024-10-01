@@ -32,6 +32,10 @@ namespace NetMVC.Controllers
             return View(person);
 
          }
+         public IActionResult Create()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PersonID,FullName")] Person person)
