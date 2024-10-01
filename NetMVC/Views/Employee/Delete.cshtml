@@ -1,4 +1,5 @@
-@model NetMVC.Models.Entity.Person
+@model NetMVC.Models.Entity.Employee
+
 @{
     ViewData["Title"] = "Delete";
 }
@@ -7,7 +8,7 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Person</h4>
+    <h4>Employee</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -19,7 +20,7 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="CCCD" />
+        <input type="hidden" asp-for="EmployeeID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

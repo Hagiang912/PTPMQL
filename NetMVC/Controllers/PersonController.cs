@@ -24,7 +24,7 @@ namespace NetMVC.Controllers
                 return NotFound();
             }
             var person = await _context.Person
-            .FirstOrDefaultAsync(m => m.PersonID == id);
+            .FirstOrDefaultAsync(m => m.CCCD == id);
             if (person == null)
             {
                 return NotFound();
@@ -38,7 +38,7 @@ namespace NetMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonID,FullName")] Person person)
+        public async Task<IActionResult> Create([Bind("CCCD,HoTen,QueQuan")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -64,9 +64,9 @@ namespace NetMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonID,FullName")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("CCCD,HoTen")] Person person)
         {
-            if (id != person.PersonID)
+            if (id != person.CCCD)
             {
                 return NotFound();
             }
@@ -80,7 +80,7 @@ namespace NetMVC.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!PersonExists(person.PersonID))
+                    if (!PersonExists(person.CCCD))
                     {
                         return NotFound();
                     }
@@ -101,7 +101,7 @@ namespace NetMVC.Controllers
             }
 
             var person = await _context.Person
-                .FirstOrDefaultAsync(m => m.PersonID == id);
+                .FirstOrDefaultAsync(m => m.CCCD == id);
             if (person == null)
             {
                 return NotFound();
@@ -125,7 +125,7 @@ namespace NetMVC.Controllers
 
         private bool PersonExists(string id)
         {
-            return _context.Person.Any(e => e.PersonID == id);
+            return _context.Person.Any(e => e.CCCD == id);
         }
     }
 }

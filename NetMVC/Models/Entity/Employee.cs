@@ -5,7 +5,7 @@ namespace NetMVC.Models.Entity
 {
     public class Employee : Person
     {
-        [Key]
+        
         public required string EmployeeID { get; set; }
         public required string Age { get; set; }
     }

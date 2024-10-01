@@ -10,8 +10,8 @@ using NetMVC.Data;
 namespace NetMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241001030738_Create_Table_Persons")]
-    partial class Create_Table_Persons
+    [Migration("20241001080409_Create_Table_Person")]
+    partial class Create_Table_Person
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,20 +21,29 @@ namespace NetMVC.Migrations
 
             modelBuilder.Entity("NetMVC.Models.Entity.Person", b =>
                 {
-                    b.Property<string>("PersonID")
+                    b.Property<string>("CCCD")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasMaxLength(8)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("HoTen")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("FullName")
+                    b.Property<string>("QueQuan")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("PersonID");
+                    b.HasKey("CCCD");
 
                     b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Person");
+
+                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("NetMVC.Models.Entity.Student", b =>
@@ -49,6 +58,21 @@ namespace NetMVC.Migrations
                     b.HasKey("StudentID");
 
                     b.ToTable("Student");
+                });
+
+            modelBuilder.Entity("NetMVC.Models.Entity.Employee", b =>
+                {
+                    b.HasBaseType("NetMVC.Models.Entity.Person");
+
+                    b.Property<string>("Age")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("EmployeeID")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasDiscriminator().HasValue("Employee");
                 });
 #pragma warning restore 612, 618
         }
