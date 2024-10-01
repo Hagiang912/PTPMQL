@@ -15,7 +15,7 @@ namespace NetMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Student.ToListAsync());
+            return View(await _context.Person.ToListAsync());
         }
         public async Task<IActionResult> Details(string id)
         {

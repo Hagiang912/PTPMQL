@@ -10,8 +10,8 @@ using NetMVC.Data;
 namespace NetMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240924041853_Create_Table_Employee")]
-    partial class Create_Table_Employee
+    [Migration("20241001030738_Create_Table_Persons")]
+    partial class Create_Table_Persons
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,18 +19,22 @@ namespace NetMVC.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.8");
 
-            modelBuilder.Entity("NetMVC.Models.Entity.Employee", b =>
+            modelBuilder.Entity("NetMVC.Models.Entity.Person", b =>
                 {
-                    b.Property<string>("EmployeeID")
+                    b.Property<string>("PersonID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("EmployeeID");
+                    b.HasKey("PersonID");
 
-                    b.ToTable("Employee");
+                    b.ToTable("Person");
                 });
 
             modelBuilder.Entity("NetMVC.Models.Entity.Student", b =>
