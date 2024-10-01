@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NetMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a6da284586f139efbe09020ac7a1d48ca335d3a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8167b150233f108f73a58ea201dc315f774c8a3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("NetMVC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NetMVC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
